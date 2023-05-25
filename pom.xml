@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.hjonas</groupId>
+  <groupId>io.github.hellojonas</groupId>
   <artifactId>slsc</artifactId>
   <version>0.0.1</version>
 
@@ -21,10 +21,10 @@
 
   <developers>
     <developer>
-        <name>Helber Belmiro</name>
-        <email>your@email.com</email>
-        <organization>The Great API</organization>
-        <organizationUrl>https://thegreatapi.com</organizationUrl>
+        <name>Hello Jonas</name>
+        <email>hellojonashp@gmail.com</email>
+        <organization>hellojonas</organization>
+        <organizationUrl>https://github.com/hellojonas/slsc-java</organizationUrl>
     </developer>
 </developers>
 
@@ -91,6 +91,20 @@
       </plugins>
     </build>
   </profile>
+</profiles>
+
+<distributionManagement>
+  <snapshotRepository>
+    <id>ossrh</id>
+    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+  </snapshotRepository>
+  <repository>
+    <id>ossrh</id>
+    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+  </repository>
+</distributionManagement>
+
+
 
 </profiles>
   <properties>
@@ -150,7 +164,17 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-      </plugins>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.7</version>
+          <extensions>true</extensions>
+          <configuration>
+            <serverId>ossrh</serverId>
+            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          </configuration>
+        </plugin>
     </pluginManagement>
   </build>
 </project>

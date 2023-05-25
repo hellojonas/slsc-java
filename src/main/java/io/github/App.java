@@ -1,4 +1,4 @@
-package com.hjonas;
+package io.github.hellojonas;
 
 public class App {
     public static void main(String[] args) {

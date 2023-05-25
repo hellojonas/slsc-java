@@ -1,4 +1,4 @@
-package com.hjonas.slsc;
+package io.github.hellojonas.slsc;
 
 class SLSProducerImpl implements SLSProducer {
 
